@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top 5 Posts - {{ category }}</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  
+<!--   
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#357ecd; padding: 3px 10px;">
+    <div class="container">
+      <a class="navbar-brand" href="#" style="font-size: 26px; color: #ffffff;">TrAcE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/" id="homeLink" style="font-size: 16px; color: #fff;">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="font-size: 16px; color: #fff;">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="font-size: 16px; color: #fff;">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/login" style="font-size: 16px; color: #fff;">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/register" style="font-size: 16px; color: #fff;">Register</a>
+        </li>
+      </ul>
+    </div>
+  </nav> -->
+
+
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .post {
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .post h3 {
+      color: #343a40;
+      font-size: medium;
+    }
+    .post:hover {
+      background-color: #f8f9fa;
+      transform: translateY(-5px);
+      transition: all 0.3s ease-in-out;
+    }
+    .bg-primary {
+      background-color: #007bff !important;
+    }
+  </style>
+</head>
+<body>
+    
+  <div class="container">
+    <h1 class="mt-5 text-center"> Top 5 Posts - {{ category }}</h1>
+    <ul class="list-unstyled mt-4">
+      {% for post in posts %}
+      <li class="post">
+        <h3 onclick="click()">{{ post.title }}</h3>
+      </li>
+      {% endfor %}
+    </ul>
+    <div class="container mt-4 text-center">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <a href="/visualizations" class="btn btn-primary bg-custom btn-lg" style="border-radius: 20px; background-color: black;">View Visualizations</a>
+    
+        </div>
+      </div>
+    </div>
+    <!-- <button onclick="redirectToVisualizations()">View Visualizations</button>
+
+    <script>
+        function redirectToVisualizations() {
+            window.location.href = "/visualizations";
+        }
+    </script> -->
+  </div>
+  <script>
+    function click(){
+      console.log("post is clicked")
+    }
+  </script>
+</body>
+</html>
